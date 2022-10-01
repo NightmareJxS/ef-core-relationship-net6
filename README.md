@@ -1,6 +1,11 @@
 # Welcome to EF-Core-Relationships-NET6 Repository
 ### This is where I test and trying to learn/implement Entity Framework in a .NET 6 web API project
 
+#### Included relationships:
+* 1-1
+* 1-n
+* n-n
+
 ## Entity Framework (Summary)
 1. Create Data models
 2. Create DataContext
