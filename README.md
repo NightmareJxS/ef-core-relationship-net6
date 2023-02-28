@@ -15,6 +15,9 @@
     + cd .\{ProjectName}
     + dotnet ef migrations add {Name}
     + dotnet ef database update
+6. New simplify command for (5.):
+    + Add-Migration [Name]
+    + Update-Database
 
 ## Connect to existed Database
 1. Scaffold-DbContext (Package Manager Console):
