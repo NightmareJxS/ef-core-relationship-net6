@@ -30,7 +30,7 @@
     + Add-Migration [Name]
     + Update-Database
 8. For creating DB with 3 layers model (the appsetting.json is on different layer). To bypass:
-    + In Program.cs (.NET6; You need to inject the appsetting config to DI:
+    + In Program.cs (.NET6) You need to inject the appsetting config to DI:
         ```C#
             // Load the appsettings.json file
             var config = new ConfigurationBuilder()
