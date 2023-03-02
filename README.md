@@ -30,32 +30,20 @@
     + Add-Migration [Name]
     + Update-Database
 8. For creating DB with 3 layers model (the appsetting.json is on different layer). To bypass:
-    + In Program.cs (.NET6) You need to inject the appsetting config to DI:
-        ```C#
-            // Load the appsettings.json file
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsetting.json")
-                .Build();
-
-            // Inject the configuration object into the DI container
-            builder.Services.AddSingleton(config);
-        ```
-     + In YourDBContext:
-        + Maybe* add a DI contructor
-            ```C#
-                public SchoolDBContext(IConfiguration config)
-                {
-                    _config = config;
-                }
-            ```
+    + Set up correct Default Package (In Package Manager Console) and Startup Project
+    + In YourDBContext:
         + Must override OnConfiguring
             ```C#
                 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
                 {
                     if (!optionsBuilder.IsConfigured)
                     {
-                        string connectionString = _config.GetConnectionString("DefaultConnection");
+                        IConfiguration config = new ConfigurationBuilder()
+                                            .SetBasePath(Directory.GetCurrentDirectory())
+                                            .AddJsonFile("appsettings.json").Build();
+
+
+                        string connectionString = config.GetConnectionString("DefaultConnection");
                         optionsBuilder.UseSqlServer(connectionString);
                     }
 
