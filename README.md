@@ -53,6 +53,8 @@
 
 ## Connect to existed Database
 1. Scaffold-DbContext (Package Manager Console):
-    + Scaffold-DbContext "Server=(local);database= {Database Name};Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+    ```
+    Scaffold-DbContext "Server=(local);database= {Database Name};Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+    ```
 2. Add ConnectionString in appsetting.json
 3. Edit Program.cs (AddDbContext)
