@@ -6,6 +6,9 @@
 * 1-n
 * n-n
 
+### Required NuGet Package
+![Required NuGet Package](https://github.com/NightmareJxS/ef-core-relationship-net6/blob/main/images/RequiredNugetPackage.PNG)
+
 ## Entity Framework (Summary) (Create new Database)
 1. Create Data models
 2. Create DataContext (remember the 2 important contructor):
